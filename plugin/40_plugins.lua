@@ -191,4 +191,29 @@ Config.now(function()
       default_quickfix_mappings = true,
     }
   )
+  add({"https://github.com/ibhagwan/fzf-lua"})
+  require("fzf-lua").setup {
+  -- MISC GLOBAL SETUP OPTIONS, SEE BELOW
+  -- fzf_bin = ...,
+  -- each of these options can also be passed as function that return options table
+  -- e.g. winopts = function() return { ... } end
+  -- winopts = { ...  },     -- UI Options
+  -- keymap = { ...  },      -- Neovim keymaps / fzf binds
+  -- actions = { ...  },     -- Fzf "accept" binds
+  -- fzf_opts = {},    -- Fzf CLI flags
+  -- fzf_colors = { ...  },  -- Fzf `--color` specification
+  -- hls = { ...  },         -- Highlights
+  -- previewers = { ...  },  -- Previewers options
+  -- SPECIFIC COMMAND/PICKER OPTIONS, SEE BELOW
+    files = {
+      no_ignore = true,
+      fd_opts = [[--color=never --type f --type l --exclude .git --exclude .jj --exclude _build --exclude releases]],
+      -- rg_opts = [[--color=never --files -g "!.git" -g "!.jj" -g "!_build" -g "!releases"]],
+    },
+    grep = {
+      no_ignore = true,
+      -- cmd = "rg -g '!_build' -g '!releases' --column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e ",
+      rg_opts = "-g '!_build' -g '!releases' --column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e",
+    }
+}
 end)

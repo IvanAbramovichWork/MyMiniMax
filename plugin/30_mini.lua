@@ -671,11 +671,12 @@ end)
 --   one of `<Leader>f` mappings defined in 'plugin/20_keymaps.lua'
 later(function() require('mini.pick').setup() end)
 
-  require('mini.pick').registry.files = function(local_opts)
-    local opts = { source = { cwd = local_opts.cwd } }
-    local_opts.cwd = nil
-    return require('mini.pick').builtin.files(local_opts, opts)
-  end
+-- require('mini.pick').registry.files = function(local_opts)
+--   local opts = { source = { cwd = local_opts.cwd } }
+--   local_opts.cwd = nil
+--   return require('mini.pick').builtin.files(local_opts, opts)
+-- end
+-- require('mini.pick').builtin.files(nil, { source = { cwd = vim.fn.getcwd() } }).
 -- Manage and expand snippets (templates for a frequently used text).
 -- Typical workflow is to type snippet's (configurable) prefix and expand it
 -- into a snippet session.
