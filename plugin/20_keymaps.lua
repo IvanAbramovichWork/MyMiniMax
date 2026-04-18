@@ -155,6 +155,9 @@ nmap_leader('fS', '<Cmd>Pick lsp scope="document_symbol"<CR>',  'Symbols documen
 nmap_leader('fv', '<Cmd>Pick visit_paths cwd=""<CR>',           'Visit paths (all)')
 nmap_leader('fV', '<Cmd>Pick visit_paths<CR>',                  'Visit paths (cwd)')
 
+vim.keymap.set('n', '<Esc>', '<cmd>nohlsearch<CR>')
+vim.keymap.set('n', '<C-s>', '<cmd>:w<cr>')
+
 -- g is for 'Git'. Common usage:
 -- - `<Leader>gs` - show information at cursor
 -- - `<Leader>go` - toggle 'mini.diff' overlay to show in-buffer unstaged changes
