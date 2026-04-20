@@ -208,11 +208,13 @@ Config.now(function()
   -- previewers = { ...  },  -- Previewers options
   -- SPECIFIC COMMAND/PICKER OPTIONS, SEE BELOW
     files = {
+      cwd = vim.fn.getcwd(),
       no_ignore = true,
       fd_opts = [[--color=never --type f --type l --exclude .git --exclude .jj --exclude _build --exclude releases]],
       -- rg_opts = [[--color=never --files -g "!.git" -g "!.jj" -g "!_build" -g "!releases"]],
     },
     grep = {
+      cwd = vim.fn.getcwd(),
       no_ignore = true,
       -- cmd = "rg -g '!_build' -g '!releases' --column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e ",
       rg_opts = "-g '!_build' -g '!releases' --column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e",
