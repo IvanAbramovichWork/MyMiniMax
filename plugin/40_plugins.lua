@@ -167,13 +167,15 @@ end)
 Config.now(function()
  -- Install only those that you need
  add({
-   'https://github.com/sainnhe/everforest'
+   'https://github.com/catppuccin/nvim'
    -- 'https://github.com/Shatur/neovim-ayu',
    -- 'https://github.com/ellisonleao/gruvbox.nvim',
  })
 
   -- Enable only one
-  vim.cmd('color everforest')
+  -- vim.cmd('color everforest')
+  vim.cmd.colorscheme 'catppuccin'
+
 
   add({ 'https://github.com/mangelozzi/rgflow.nvim' })
   require('rgflow').setup(
