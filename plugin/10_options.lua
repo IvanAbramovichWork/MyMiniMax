@@ -86,6 +86,7 @@ vim.o.iskeyword = '@,48-57,_,192-255,-' -- Treat dash as `word` textobject part
 -- "Start of list item is: at least one special character (digit, -, +, *)
 -- possibly followed by punctuation (. or `)`) followed by at least one space".
 vim.o.formatlistpat = [[^\s*[0-9\-\+\*]\+[\.\)]*\s\+]]
+vim.g.clipboard = 'osc52'
 
 -- Built-in completion
 vim.o.complete        = '.,w,b,kspell'                  -- Use less sources
