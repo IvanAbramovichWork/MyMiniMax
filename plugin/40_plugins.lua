@@ -225,6 +225,7 @@ Config.now(function()
   add({ 'https://github.com/nvim-lua/plenary.nvim' })
   add({ 'https://github.com/sindrets/diffview.nvim' })
   add({ 'https://github.com/NeogitOrg/neogit' })
+  add({ 'https://github.com/lambdalisue/vim-suda' })
   add({ 'https://github.com/lewis6991/gitsigns.nvim' })
   require('gitsigns').setup {
     on_attach = function(bufnr)
