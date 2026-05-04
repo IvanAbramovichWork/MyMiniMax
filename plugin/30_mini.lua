@@ -615,7 +615,7 @@ later(function() require('mini.move').setup() end)
 -- - `:h MiniOperators-mappings` - overview of how mappings are created
 -- - `:h MiniOperators-overview` - overview of present operators
 later(function()
-  require('mini.operators').setup()
+  require('mini.operators').setup({replace = {prefix = ''}})
 
   -- Create mappings for swapping adjacent arguments. Notes:
   -- - Relies on `a` argument textobject from 'mini.ai'.
