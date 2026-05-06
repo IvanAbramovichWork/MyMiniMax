@@ -210,7 +210,7 @@ Config.now(function()
     files = {
       cwd = vim.fn.getcwd(),
       no_ignore = true,
-      fd_opts = [[--color=never --type f --type l --exclude .git --exclude .jj --exclude _build --exclude releases]],
+      fd_opts = [[--color=never --type f --type l --exclude .git --exclude .jj --exclude _build --exclude ecss-node --exclude releases]],
       -- rg_opts = [[--color=never --files -g "!.git" -g "!.jj" -g "!_build" -g "!releases"]],
     },
     grep = {
