@@ -142,87 +142,9 @@ end)
 -- 'mini.snippets' is designed to work with it as seamlessly as possible.
 -- See `:h MiniSnippets.gen_loader.from_lang()`.
 later(function() add({ 'https://github.com/rafamadriz/friendly-snippets' }) end)
+
 now_if_args(function()
   add({ 'https://github.com/kdheepak/lazygit.nvim' })
-end)
-
--- Honorable mentions =========================================================
-
--- 'mason-org/mason.nvim' (a.k.a. "Mason") is a great tool (package manager) for
--- installing external language servers, formatters, and linters. It provides
--- a unified interface for installing, updating, and deleting such programs.
---
--- The caveat is that these programs will be set up to be mostly used inside Neovim.
--- If you need them to work elsewhere, consider using other package managers.
---
--- You can use it like so:
--- now_if_args(function()
---   add({ 'https://github.com/mason-org/mason.nvim' })
---   require('mason').setup()
--- end)
-
--- Beautiful, usable, well maintained color schemes outside of 'mini.nvim' and
--- have full support of its highlight groups. Use if you don't like 'miniwinter'
--- enabled in 'plugin/30_mini.lua' or other suggested 'mini.hues' based ones.
-Config.now(function()
- -- Install only those that you need
- add({
-   'https://github.com/catppuccin/nvim'
-   -- 'https://github.com/Shatur/neovim-ayu',
-   -- 'https://github.com/ellisonleao/gruvbox.nvim',
- })
-
-  -- Enable only one
-  -- vim.cmd('color everforest')
-  vim.cmd.colorscheme 'catppuccin'
-
-
-  add({ 'https://github.com/mangelozzi/rgflow.nvim' })
-  require('rgflow').setup(
-    {
-      -- Set the default rip grep flags and options for when running a search via
-      -- RgFlow. Once changed via the UI, the previous search flags are used for
-      -- each subsequent search (until Neovim restarts).
-      cmd_flags = "--smart-case --fixed-strings --ignore --max-columns 200",
-
-      -- Mappings to trigger RgFlow functions
-      default_trigger_mappings = true,
-      -- These mappings are only active when the RgFlow UI (panel) is open
-      default_ui_mappings = true,
-      -- QuickFix window only mapping
-      default_quickfix_mappings = true,
-    }
-  )
-  add({"https://github.com/ibhagwan/fzf-lua"})
-  require("fzf-lua").setup {
-  -- MISC GLOBAL SETUP OPTIONS, SEE BELOW
-  -- fzf_bin = ...,
-  -- each of these options can also be passed as function that return options table
-  -- e.g. winopts = function() return { ... } end
-  -- winopts = { ...  },     -- UI Options
-  -- keymap = { ...  },      -- Neovim keymaps / fzf binds
-  -- actions = { ...  },     -- Fzf "accept" binds
-  -- fzf_opts = {},    -- Fzf CLI flags
-  -- fzf_colors = { ...  },  -- Fzf `--color` specification
-  -- hls = { ...  },         -- Highlights
-  -- previewers = { ...  },  -- Previewers options
-  -- SPECIFIC COMMAND/PICKER OPTIONS, SEE BELOW
-    files = {
-      cwd = vim.fn.getcwd(),
-      no_ignore = true,
-      fd_opts = [[--color=never --type f --type l --exclude .git --exclude .jj --exclude _build --exclude ecss-node --exclude releases]],
-      -- rg_opts = [[--color=never --files -g "!.git" -g "!.jj" -g "!_build" -g "!releases"]],
-    },
-    grep = {
-      cwd = vim.fn.getcwd(),
-      no_ignore = true,
-      -- cmd = "rg -g '!_build' -g '!releases' --column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e ",
-      rg_opts = "-g '!_build' -g '!releases' --column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e",
-    }
-  }
-
-  -- add({ 'https://github.com/tpope/vim-fugitive' })
-  add({ 'https://github.com/nvim-lua/plenary.nvim' })
   add({ 'https://github.com/sindrets/diffview.nvim' })
   add({ 'https://github.com/NeogitOrg/neogit' })
   add({ 'https://github.com/lambdalisue/vim-suda' })
@@ -273,4 +195,83 @@ Config.now(function()
       end)
     end
   }
+  -- add({ 'https://github.com/mangelozzi/rgflow.nvim' })
+  -- require('rgflow').setup(
+  --   {
+  --     -- Set the default rip grep flags and options for when running a search via
+  --     -- RgFlow. Once changed via the UI, the previous search flags are used for
+  --     -- each subsequent search (until Neovim restarts).
+  --     cmd_flags = "--smart-case --fixed-strings --ignore --max-columns 200",
+  --
+  --     -- Mappings to trigger RgFlow functions
+  --     default_trigger_mappings = true,
+  --     -- These mappings are only active when the RgFlow UI (panel) is open
+  --     default_ui_mappings = true,
+  --     -- QuickFix window only mapping
+  --     default_quickfix_mappings = true,
+  --   }
+  -- )
+  add({"https://github.com/ibhagwan/fzf-lua"})
+  require("fzf-lua").setup {
+  -- MISC GLOBAL SETUP OPTIONS, SEE BELOW
+  -- fzf_bin = ...,
+  -- each of these options can also be passed as function that return options table
+  -- e.g. winopts = function() return { ... } end
+  -- winopts = { ...  },     -- UI Options
+  -- keymap = { ...  },      -- Neovim keymaps / fzf binds
+  -- actions = { ...  },     -- Fzf "accept" binds
+  -- fzf_opts = {},    -- Fzf CLI flags
+  -- fzf_colors = { ...  },  -- Fzf `--color` specification
+  -- hls = { ...  },         -- Highlights
+  -- previewers = { ...  },  -- Previewers options
+  -- SPECIFIC COMMAND/PICKER OPTIONS, SEE BELOW
+    files = {
+      cwd = vim.fn.getcwd(),
+      no_ignore = true,
+      fd_opts = [[--color=never --type f --type l --exclude .git --exclude .jj --exclude _build --exclude ecss-node --exclude releases]],
+      -- rg_opts = [[--color=never --files -g "!.git" -g "!.jj" -g "!_build" -g "!releases"]],
+    },
+    grep = {
+      cwd = vim.fn.getcwd(),
+      no_ignore = true,
+      -- cmd = "rg -g '!_build' -g '!releases' --column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e ",
+      rg_opts = "-g '!_build' -g '!releases' --column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e",
+    }
+  }
+  -- add({ 'https://github.com/tpope/vim-fugitive' })
+end)
+
+-- Honorable mentions =========================================================
+
+-- 'mason-org/mason.nvim' (a.k.a. "Mason") is a great tool (package manager) for
+-- installing external language servers, formatters, and linters. It provides
+-- a unified interface for installing, updating, and deleting such programs.
+--
+-- The caveat is that these programs will be set up to be mostly used inside Neovim.
+-- If you need them to work elsewhere, consider using other package managers.
+--
+-- You can use it like so:
+-- now_if_args(function()
+--   add({ 'https://github.com/mason-org/mason.nvim' })
+--   require('mason').setup()
+-- end)
+
+-- Beautiful, usable, well maintained color schemes outside of 'mini.nvim' and
+-- have full support of its highlight groups. Use if you don't like 'miniwinter'
+-- enabled in 'plugin/30_mini.lua' or other suggested 'mini.hues' based ones.
+Config.now(function()
+ -- Install only those that you need
+ add({
+   'https://github.com/catppuccin/nvim'
+   -- 'https://github.com/Shatur/neovim-ayu',
+   -- 'https://github.com/ellisonleao/gruvbox.nvim',
+ })
+
+  -- Enable only one
+  -- vim.cmd('color everforest')
+  vim.cmd.colorscheme 'catppuccin'
+
+
+
+  add({ 'https://github.com/nvim-lua/plenary.nvim' })
 end)
