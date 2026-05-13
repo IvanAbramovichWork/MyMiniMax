@@ -239,6 +239,7 @@ now_if_args(function()
     }
   }
   -- add({ 'https://github.com/tpope/vim-fugitive' })
+  add({'https://github.com/elixir-editors/vim-elixir'})
 end)
 
 -- Honorable mentions =========================================================
