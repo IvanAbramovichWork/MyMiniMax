@@ -239,8 +239,7 @@ now_if_args(function()
       rg_opts = "-g '!_build' -g '!releases' --column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e",
     }
   }
-  -- add({ 'https://github.com/tpope/vim-fugitive' })
-  add({'https://github.com/elixir-editors/vim-elixir'})
+  add({ 'https://github.com/tpope/vim-fugitive' })
 end)
 
 -- Honorable mentions =========================================================
