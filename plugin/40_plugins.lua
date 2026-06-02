@@ -240,6 +240,12 @@ now_if_args(function()
     }
   }
   add({ 'https://github.com/tpope/vim-fugitive' })
+  add({ 'https://github.com/nvim-lua/plenary.nvim' })
+  add({ 'https://github.com/MunifTanjim/nui.nvim' })
+  add({ 'https://github.com/harrisoncramer/gitlab.nvim' })
+  require('diffview').setup()
+  require('gitlab').setup()
+
 end)
 
 -- Honorable mentions =========================================================
@@ -271,8 +277,4 @@ Config.now(function()
   -- Enable only one
   -- vim.cmd('color everforest')
   vim.cmd.colorscheme 'catppuccin'
-
-
-
-  add({ 'https://github.com/nvim-lua/plenary.nvim' })
 end)

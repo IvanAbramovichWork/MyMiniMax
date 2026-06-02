@@ -177,6 +177,8 @@ vim.keymap.set('n', '<C-s>', '<cmd>:w<cr>')
 -- nmap_leader('go', '<Cmd>lua MiniDiff.toggle_overlay()<CR>', 'Toggle overlay')
 -- nmap_leader('gs', '<Cmd>lua MiniGit.show_at_cursor()<CR>',  'Show at cursor')
 nmap_leader('gg', '<Cmd>Neogit<CR>',  'Toggle Neogit')
+nmap_leader('gL', '<Cmd>LazyGit<CR>',  'Toggle Lazygit')
+nmap_leader('gl', function () require('gitlab').review() end,  'Toggle Neogit')
 --
 -- xmap_leader('gs', '<Cmd>lua MiniGit.show_at_cursor()<CR>', 'Show at selection')
 
