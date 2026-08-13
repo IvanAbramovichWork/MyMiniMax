@@ -473,7 +473,28 @@ now_if_args(function()
         },
     })
     require('gitlab').setup()
+    add({ 'https://github.com/coder/claudecode.nvim' })
+    require('claudecode').setup({
+        terminal_cmd = "/usr/bin/eltex-claude",
+        cmd = {
+            "ClaudeCode",
+            "ClaudeCodeFocus",
+            "ClaudeCodeSelectModel",
+            "ClaudeCodeAdd",
+            "ClaudeCodeSend",
+            "ClaudeCodeTreeAdd",
+            "ClaudeCodeStatus",
+            "ClaudeCodeStart",
+            "ClaudeCodeStop",
+            "ClaudeCodeOpen",
+            "ClaudeCodeClose",
+            "ClaudeCodeDiffAccept",
+            "ClaudeCodeDiffDeny",
+            "ClaudeCodeCloseAllDiffs",
+        }
+    })
 end)
+
 
 -- Honorable mentions =========================================================
 

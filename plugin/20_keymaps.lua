@@ -254,3 +254,15 @@ nmap_leader('vV', '<Cmd>lua MiniVisits.remove_label("core")<CR>', 'Remove "core"
 nmap_leader('vl', '<Cmd>lua MiniVisits.add_label()<CR>',          'Add label')
 nmap_leader('vL', '<Cmd>lua MiniVisits.remove_label()<CR>',       'Remove label')
 -- stylua: ignore end
+-- nmap_leader( "a", nil,  "AI/Claude Code" )
+nmap_leader("ac", "<cmd>ClaudeCode<cr>", "Toggle Claude")
+nmap_leader("af", "<cmd>ClaudeCodeFocus<cr>", "Focus Claude")
+nmap_leader("ar", "<cmd>ClaudeCode --resume<cr>", "Resume Claude")
+nmap_leader("aC", "<cmd>ClaudeCode --continue<cr>", "Continue Claude")
+nmap_leader("am", "<cmd>ClaudeCodeSelectModel<cr>", "Select Claude model")
+nmap_leader("ab", "<cmd>ClaudeCodeAdd %<cr>", "Add current buffer")
+-- Diff management
+nmap_leader("aa", "<cmd>ClaudeCodeDiffAccept<cr>", "Accept diff")
+nmap_leader("ad", "<cmd>ClaudeCodeDiffDeny<cr>", "Deny diff")
+vim.keymap.set('v', '<leader>as', '<cmd>ClaudeCodeSend<cr>', { desc = "Send to Claude" })
+
