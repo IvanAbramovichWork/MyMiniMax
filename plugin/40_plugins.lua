@@ -243,7 +243,6 @@ now_if_args(function()
     add({ 'https://github.com/tpope/vim-fugitive' })
     add({ 'https://github.com/nvim-lua/plenary.nvim' })
     add({ 'https://github.com/MunifTanjim/nui.nvim' })
-    add({ 'https://github.com/harrisoncramer/gitlab.nvim' })
     local actions = require("diffview.actions")
     require("diffview").setup({
         diff_binaries = false, -- Show diffs for binaries
@@ -472,7 +471,6 @@ now_if_args(function()
             },
         },
     })
-    require('gitlab').setup()
     add({ 'https://github.com/coder/claudecode.nvim' })
     require('claudecode').setup({
         terminal_cmd = "/usr/bin/eltex-claude",
@@ -510,6 +508,15 @@ now_if_args(function()
   add({ 'https://github.com/mason-org/mason.nvim' })
   require('mason').setup()
 end)
+
+if vim.fn.getcwd():find('ecss10') then
+    Config.later(function()
+        add({ 'https://github.com/harrisoncramer/gitlab.nvim' })
+        require('gitlab').setup()
+    end
+
+    )
+end
 
 -- Beautiful, usable, well maintained color schemes outside of 'mini.nvim' and
 -- have full support of its highlight groups. Use if you don't like 'miniwinter'
