@@ -214,6 +214,7 @@ now_if_args(function()
     --   }
     -- )
     add({ "https://github.com/ibhagwan/fzf-lua" })
+    local actions2 = require("fzf-lua.actions")
     require("fzf-lua").setup {
         -- MISC GLOBAL SETUP OPTIONS, SEE BELOW
         -- fzf_bin = ...,
@@ -234,6 +235,9 @@ now_if_args(function()
             -- rg_opts = [[--color=never --files -g "!.git" -g "!.jj" -g "!_build" -g "!releases"]],
         },
         grep = {
+            actions = {
+                ["ctrl-i"] = {actions2.grep_lgrep}
+            },
             cwd = vim.fn.getcwd(),
             no_ignore = true,
             -- cmd = "rg -g '!_build' -g '!releases' --column --line-number --no-heading --color=always --smart-case --max-columns=4096 -e ",
