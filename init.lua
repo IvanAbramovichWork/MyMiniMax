@@ -119,3 +119,14 @@ Config.on_packchanged = function(plugin_name, kinds, callback, desc)
   end
   Config.new_autocmd('PackChanged', '*', f, desc)
 end
+
+local group = vim.api.nvim_create_augroup("filetypedetect", {
+    clear = true,
+})
+
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+    group = group,
+    pattern = "*.log",
+    command = "setfiletype log",
+})
+
