@@ -176,17 +176,16 @@ now_if_args(function()
                     gitsigns.nav_hunk('prev')
                 end
             end)
-            map('n', '<leader>hs', gitsigns.stage_hunk)
-            map('n', '<leader>hr', gitsigns.reset_hunk)
+            map('n', '<leader>hs', gitsigns.stage_hunk, { desc = "Git sign stage" })
+            map('n', '<leader>hr', gitsigns.reset_hunk, { desc = "Git sign reset" })
 
             map('v', '<leader>hs', function()
                 gitsigns.stage_hunk({ vim.fn.line('.'), vim.fn.line('v') })
-            end)
+            end, { desc = "Git sign stage" })
 
             map('v', '<leader>hr', function()
                 gitsigns.reset_hunk({ vim.fn.line('.'), vim.fn.line('v') })
-            end)
-
+            end, { desc = "Git sign reset" })
             map('n', '<leader>hS', gitsigns.stage_buffer)
             map('n', '<leader>hR', gitsigns.reset_buffer)
             map('n', '<leader>hp', gitsigns.preview_hunk)
