@@ -141,6 +141,7 @@ nmap_leader('fd', '<Cmd>Pick diagnostic scope="all"<CR>',       'Diagnostic work
 nmap_leader('fD', '<Cmd>Pick diagnostic scope="current"<CR>',   'Diagnostic buffer')
 nmap_leader('ff', '<Cmd>FzfLua files<CR>',                        'Files')
 nmap_leader('fg', '<Cmd>FzfLua grep<CR>',                    'Grep')
+nmap_leader('fj', '<Cmd>FzfLua jumps<CR>',                    'Jumps')
 nmap_leader('fl', '<Cmd>FzfLua live_grep<CR>',                    'Grep live')
 nmap_leader('fG', '<Cmd>FzfLua grep_cword<CR>',       'Grep current word')
 vim.keymap.set('v', '<leader>fg', '<Cmd>FzfLua grep_visual<CR>', { desc = "Search visual selection" })
