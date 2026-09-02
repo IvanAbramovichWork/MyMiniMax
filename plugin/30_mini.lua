@@ -669,7 +669,7 @@ end)
 -- - `:h MiniPick.builtin` and `:h MiniExtra.pickers` - available pickers;
 --   Execute one either with Lua function, `:Pick <picker-name>` command, or
 --   one of `<Leader>f` mappings defined in 'plugin/20_keymaps.lua'
-later(function() require('mini.pick').setup() end)
+-- later(function() require('mini.pick').setup() end)
 
 -- require('mini.pick').registry.files = function(local_opts)
 --   local opts = { source = { cwd = local_opts.cwd } }

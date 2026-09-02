@@ -127,18 +127,18 @@ nmap_leader('eQ', explore_locations,                        'Location list')
 -- - `<Leader>fv` - all visited paths; requires 'mini.visits'
 --
 -- All these use 'mini.pick'. See `:h MiniPick-overview` for an overview.
-local pick_added_hunks_buf = '<Cmd>Pick git_hunks path="%" scope="staged"<CR>'
-local pick_workspace_symbols_live = '<Cmd>Pick lsp scope="workspace_symbol_live"<CR>'
+-- local pick_added_hunks_buf = '<Cmd>Pick git_hunks path="%" scope="staged"<CR>'
+-- local pick_workspace_symbols_live = '<Cmd>Pick lsp scope="workspace_symbol_live"<CR>'
 
 nmap_leader('f/', '<Cmd>FzfLua search_history<CR>',            '"/" history')
 nmap_leader('f:', '<Cmd>FzfLua command_history<CR>',            '":" history')
-nmap_leader('fa', '<Cmd>Pick git_hunks scope="staged"<CR>',     'Added hunks (all)')
-nmap_leader('fA', pick_added_hunks_buf,                         'Added hunks (buf)')
+-- nmap_leader('fa', '<Cmd>Pick git_hunks scope="staged"<CR>',     'Added hunks (all)')
+-- nmap_leader('fA', pick_added_hunks_buf,                         'Added hunks (buf)')
 nmap_leader('fb', '<Cmd>FzfLua buffers<CR>',                      'Buffers')
-nmap_leader('fc', '<Cmd>Pick git_commits<CR>',                  'Commits (all)')
-nmap_leader('fC', '<Cmd>Pick git_commits path="%"<CR>',         'Commits (buf)')
-nmap_leader('fd', '<Cmd>Pick diagnostic scope="all"<CR>',       'Diagnostic workspace')
-nmap_leader('fD', '<Cmd>Pick diagnostic scope="current"<CR>',   'Diagnostic buffer')
+-- nmap_leader('fc', '<Cmd>Pick git_commits<CR>',                  'Commits (all)')
+-- nmap_leader('fC', '<Cmd>Pick git_commits path="%"<CR>',         'Commits (buf)')
+-- nmap_leader('fd', '<Cmd>Pick diagnostic scope="all"<CR>',       'Diagnostic workspace')
+-- nmap_leader('fD', '<Cmd>Pick diagnostic scope="current"<CR>',   'Diagnostic buffer')
 nmap_leader('ff', '<Cmd>FzfLua files<CR>',                        'Files')
 nmap_leader('fg', '<Cmd>FzfLua grep<CR>',                    'Grep')
 nmap_leader('fj', '<Cmd>FzfLua jumps<CR>',                    'Jumps')
