@@ -154,8 +154,9 @@ nmap_leader('frf', '<Cmd>FzfLua files resume=true<CR>',                       'R
 nmap_leader('frg', '<Cmd>FzfLua grep resume=true<CR>',                       'Resume grep')
 nmap_leader('frl', '<Cmd>FzfLua live_grep resume=true<CR>',                       'Resume live_grep')
 -- nmap_leader('fR', '<Cmd>Pick lsp scope="references"<CR>',       'References (LSP)')
-nmap_leader('fs', pick_workspace_symbols_live,                  'Symbols workspace (live)')
-nmap_leader('fS', '<Cmd>Pick lsp scope="document_symbol"<CR>',  'Symbols document')
+nmap_leader('fs', '<Cmd>FzfLua lsp_document_symbols<CR>',                  'Symbols workspace (live)')
+-- nmap_leader('fs', pick_workspace_symbols_live,                  'Symbols workspace (live)')
+-- nmap_leader('fS', '<Cmd>Pick lsp scope="document_symbol"<CR>',  'Symbols document')
 nmap_leader('fv', '<Cmd>FzfLua oldfiles<CR>',           'Visit paths (all)')
 -- nmap_leader('fV', '<Cmd>Pick visit_paths<CR>',                  'Visit paths (cwd)')
 
