@@ -132,7 +132,27 @@ later(function()
     },
     -- Map of filetype to formatters
     -- Make sure that necessary CLI tool is available
-    formatters_by_ft = { lua = { 'stylua' }, erlang = {'erlfmt'} , haskell = {"fourmolu"}},
+    formatters_by_ft = { lua = { 'stylua' }, erlang = {'erlfmt'} , haskell = {"fourmolu"},
+      elixir = { 'mix' }, heex = { 'mix' } },
+    formatters = {
+      -- ecss10's project_config.exs fetch_env!("SEMVER") during config evaluation,
+      -- which `mix format` reads before mix.exs sets it. Conform replaces the whole
+      -- environment when `env` is set, so pass a full copy with fallbacks.
+      mix = {
+        env = function()
+          local env = {}
+          for k, v in pairs(vim.env) do env[k] = v end
+          env.C_VER = env.C_VER or '18.0.0'
+          if not env.SEMVER then
+            local parts = vim.split(env.C_VER, '.', { plain = true })
+            env.SEMVER = #parts == 4
+              and string.format('%s.%s.%s+build.%s', parts[1], parts[2], parts[3], parts[4])
+              or string.format('%s.%s.0+build.%s', parts[1], parts[2], parts[3])
+          end
+          return env
+        end,
+      },
+    },
   })
 end)
 
