@@ -208,13 +208,27 @@ now_if_args(function()
             map('v', '<leader>hr', function()
                 gitsigns.reset_hunk({ vim.fn.line('.'), vim.fn.line('v') })
             end, { desc = "Git sign reset" })
-            map('n', '<leader>hS', gitsigns.stage_buffer)
-            map('n', '<leader>hR', gitsigns.reset_buffer)
-            map('n', '<leader>hp', gitsigns.preview_hunk)
-            map('n', '<leader>hi', gitsigns.preview_hunk_inline)
+            map('n', '<leader>hS', gitsigns.stage_buffer, { desc = "Git sign stage buffer" })
+            map('n', '<leader>hR', gitsigns.reset_buffer, { desc = "Git sign reset buffer" })
+            map('n', '<leader>hp', gitsigns.preview_hunk, { desc = "Git sign preview hunk" })
+            map('n', '<leader>hi', gitsigns.preview_hunk_inline, { desc = "Git sign preview hunk inline" })
             map('n', '<leader>hb', function()
                 gitsigns.blame_line({ full = true })
-            end)
+            end, { desc = "Gitsign git blame" })
+            map('n', '<leader>hd', gitsigns.diffthis, {desc = "Git sign diffthis"})
+            map('n', '<leader>hD', function()
+                gitsigns.diffthis('~')
+            end, {desc = "Git sign diffthis('~')"})
+
+            map('n', '<leader>hQ', function() gitsigns.setqflist('all') end, {desc = "Git sign setaflist all"})
+            map('n', '<leader>hq', gitsigns.setqflist, {desc = "Git sign setqflist"})
+
+            -- Toggles
+            map('n', '<leader>tb', gitsigns.toggle_current_line_blame, {desc = "Git sign toggle_current_line_blame"})
+            map('n', '<leader>tw', gitsigns.toggle_word_diff, {desc = " Git sign toggle_word_diff"})
+
+            -- Text object
+            map({ 'o', 'x' }, 'ih', gitsigns.select_hunk)
         end
     }
     -- add({ 'https://github.com/mangelozzi/rgflow.nvim' })
