@@ -247,6 +247,7 @@ now_if_args(function()
     --     default_quickfix_mappings = true,
     --   }
     -- )
+    add({ 'https://github.com/nvim-lua/plenary.nvim' })
     add({ "https://github.com/ibhagwan/fzf-lua" })
     local actions2 = require("fzf-lua.actions")
     require("fzf-lua").setup {
@@ -262,6 +263,7 @@ now_if_args(function()
         -- hls = { ...  },         -- Highlights
         -- previewers = { ...  },  -- Previewers options
         -- SPECIFIC COMMAND/PICKER OPTIONS, SEE BELOW
+        ui_select = true,
         files = {
             cwd = vim.fn.getcwd(),
             no_ignore = true,
@@ -279,7 +281,6 @@ now_if_args(function()
         }
     }
     add({ 'https://github.com/tpope/vim-fugitive' })
-    add({ 'https://github.com/nvim-lua/plenary.nvim' })
     add({ 'https://github.com/MunifTanjim/nui.nvim' })
     local actions = require("diffview.actions")
     require("diffview").setup({

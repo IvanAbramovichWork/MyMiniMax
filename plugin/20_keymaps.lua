@@ -193,7 +193,8 @@ nmap_leader('gca', '<Cmd>G commit --amend<CR>',  'Git commit --amend')
 nmap_leader('gpp', '<Cmd>G push<CR>',  'Git push')
 nmap_leader('gpf', '<Cmd>G push --force-with-lease<CR>',  'Git push --force-with-lease')
 nmap_leader('gG', '<Cmd>LazyGit<CR>',  'Toggle Lazygit')
-nmap_leader('gL', function () require('gitlab').review() end,  'Toggle GitLab')
+nmap_leader('gLr', function () require('gitlab').review() end,  'Toggle GitLab')
+nmap_leader('gLc', function () require('gitlab').choose_merge_request() end,  'Toggle GitLab')
 --
 -- xmap_leader('gs', '<Cmd>lua MiniGit.show_at_cursor()<CR>', 'Show at selection')
 
