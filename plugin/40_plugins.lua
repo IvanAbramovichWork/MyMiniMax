@@ -573,5 +573,5 @@ Config.now(function()
 
     -- Enable only one
     -- vim.cmd('color everforest')
-    vim.cmd.colorscheme 'everforest'
+    vim.cmd.colorscheme 'carbonfox'
 end)
